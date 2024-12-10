@@ -1,42 +1,59 @@
 <template>
-  <aside class="aside-block">
-    <div class="box">
-      <div class="aside-box1">
-        <h3>
-          TODO: рабочее пространство
-          <p>Бесплатно</p>
-        </h3>
-        <button>
-          <img src="../../public/icons/arrow_left.svg" alt="arrow" />
+    <aside v-if="isAsideVisible" class="aside-block">
+      <div class="box">
+        <div class="aside-box1">
+          <h3>
+            TODO: рабочее пространство
+            <p>Бесплатно</p>
+          </h3>
+          <button @click="toggleAside">
+            <img src="../../public/icons/arrow_left.svg" alt="arrow" />
+          </button>
+        </div>
+  
+        <hr />
+  
+        <button class="aside-button_1">
+          <img src="../../public/icons/board.svg" alt="" />
+          <p>Доски</p>
         </button>
+  
+        <button class="aside-button_2">
+          <img src="../../public/icons/participants.svg" alt="" />
+          <p>Участники</p>
+        </button>
+  
+        <div class="aside-box2">
+          <p>Режимы просмотра рабочего пространства...</p>
+          <div class="aside-item_2"></div>
+        </div>
       </div>
+    </aside>
+  
+    <!-- Кнопка для повторного открытия (опционально) -->
+    <button v-else @click="toggleAside" class="open-aside">
+      Open Aside
+    </button>
+  </template>
 
-      <hr />
+<script lang="ts">
+import { defineComponent, ref } from "vue";
 
-      <button class="aside-button_1">
-        <img src="../../public/icons/board.svg" alt="" />
-        <p>Доски</p>
-      </button>
-
-      <button class="aside-button_2">
-        <img src="../../public/icons/participants.svg" alt="" />
-        <p>Участники</p>
-      </button>
-
-      <div class="aside-box2">
-        <p>Режимы просмотра рабочего пространства...</p>
-
-       
-        <div class="aside-item_2"></div>
-      </div>
-    </div>
-  </aside>
-</template>
-
-<script>
-export default {
+export default defineComponent({
   name: "AsideVue",
-};
+  setup() {
+    const isAsideVisible = ref(true);
+
+    const toggleAside = () => {
+      isAsideVisible.value = !isAsideVisible.value;
+    };
+
+    return {
+      isAsideVisible,
+      toggleAside,
+    };
+  },
+});
 </script>
 
 <style lang="scss">
