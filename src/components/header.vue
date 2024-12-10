@@ -3,8 +3,10 @@
     <nav class="nav">
       <h1>TODO</h1>
         
-
+      <div class="box">
+        <input type="text" placeholder="Поиск">
       <button>Создать</button>
+    </div>
     </nav>
   </header>
 </template>
@@ -19,7 +21,7 @@ export default {
 
 <style lang="scss">
 .header {
-  height: 100px;
+  height: 70px;
   width: 100%;
   background-color: #1D2125;
 
@@ -32,12 +34,26 @@ export default {
 
 
 
-    button {
-        padding: 10px 25px;
-        border-radius: 10px;
-        background-color: #579DFF;
-        border: none;
+    .box {
+        display: flex;
+        gap: 10px;
+        button {
+            padding: 10px 25px;
+            border-radius: 10px;
+            background-color: #579DFF;
+            border: none;
+        }
+
+
+        input {
+            padding: 5px 5px;
+            border-radius: 6px;
+            border: none;
+            background-color: #22272B;
+        }
+
     }
+
 
 
   }
