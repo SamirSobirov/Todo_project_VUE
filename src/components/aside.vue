@@ -8,6 +8,8 @@
         </h3>
         <button><img  src="../../public/icons/arrow_left.svg" alt="arrow" /></button>
       </div>
+
+      <hr>
     </div>
   </aside>
 </template>
@@ -24,8 +26,9 @@ export default {
 <style lang="scss">
 .aside-block {
   width: 500px;
-  height: 100%;
+  height: 100vh; 
   background-color: #161a1d;
+
 
   .box {
     padding-left: 15px;
@@ -34,7 +37,7 @@ export default {
       display: flex;
       align-items: center;
         justify-content: space-between;
-        padding: 0px 15px;
+        padding: 10px 15px;
       h3 {
         font-size: 18px;
         color: #9fadbc;
@@ -47,7 +50,6 @@ export default {
 
       button {
         border: none;
-        padding: 10px 10px;
         height: 32px;
         width: 32px;
         background-color: #161a1d;
