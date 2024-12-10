@@ -2,27 +2,22 @@
 
 <template>
   <div>
-    
-<headerVue />
-
+    <headerVue />
+    <asideVue />
   </div>
 </template>
 
 <style scoped></style>
 
-
-
-
 <script>
-import headerVue from './components/header.vue';
-
-
+import asideVue from "./components/aside.vue";
+import headerVue from "./components/header.vue";
 
 export default {
   name: "App",
   components: {
-    headerVue
-
+    headerVue,
+    asideVue
   },
 };
 </script>
