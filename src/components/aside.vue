@@ -1,15 +1,22 @@
 <template>
   <aside class="aside-block">
     <div class="box">
-      <div class="aside-box">
+      <div class="aside-item_1">
         <h3>
           TODO: рабочее пространство
           <p>Бесплатно</p>
         </h3>
-        <button><img  src="../../public/icons/arrow_left.svg" alt="arrow" /></button>
+        <button>
+          <img src="../../public/icons/arrow_left.svg" alt="arrow" />
+        </button>
       </div>
 
-      <hr>
+      <hr />
+
+      <button class="aside-button_1">
+        <img src="../../public/icons/board.svg" alt="" />
+        <p>Доски</p>
+      </button>
     </div>
   </aside>
 </template>
@@ -20,24 +27,22 @@ export default {
 };
 </script>
 
-
-
-
 <style lang="scss">
 .aside-block {
   width: 500px;
-  height: 100vh; 
+  height: 100vh;
   background-color: #161a1d;
 
-
   .box {
-    padding-left: 15px;
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
 
-    .aside-box {
+    .aside-item_1 {
       display: flex;
       align-items: center;
-        justify-content: space-between;
-        padding: 10px 15px;
+      justify-content: space-between;
+      padding: 10px 10px;
       h3 {
         font-size: 18px;
         color: #9fadbc;
@@ -55,9 +60,32 @@ export default {
         background-color: #161a1d;
 
         img {
-            height: 22px;
-            width: 22px;
+          height: 22px;
+          width: 22px;
         }
+      }
+    }
+
+    .aside-button_1 {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      padding-right: 380px;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: #161a1d;
+      color: white;
+      gap: 12px;
+
+      p {
+        font-weight: 100;
+        font-size: 17px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
       }
     }
   }
