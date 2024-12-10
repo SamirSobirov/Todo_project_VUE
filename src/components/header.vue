@@ -46,7 +46,7 @@ export default {
 
 
         input {
-            padding: 5px 5px;
+            padding: 5px 20px;
             border-radius: 6px;
             border: none;
             background-color: #22272B;
