@@ -1,7 +1,7 @@
 <template>
   <aside class="aside-block">
     <div class="box">
-      <div class="aside-item_1">
+      <div class="aside-box1">
         <h3>
           TODO: рабочее пространство
           <p>Бесплатно</p>
@@ -18,11 +18,17 @@
         <p>Доски</p>
       </button>
 
-
       <button class="aside-button_2">
         <img src="../../public/icons/participants.svg" alt="" />
         <p>Участники</p>
       </button>
+
+      <div class="aside-box2">
+        <p>Режимы просмотра рабочего пространства...</p>
+
+       
+        <div class="aside-item_2"></div>
+      </div>
     </div>
   </aside>
 </template>
@@ -45,10 +51,8 @@ export default {
     padding: 0px 10px;
     align-items: center;
     justify-content: center;
-    
-    
 
-    .aside-item_1 {
+    .aside-box1 {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,6 +80,22 @@ export default {
       }
     }
 
+    .aside-box2 {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      padding: 10px 10px;
+
+
+
+
+      
+      p {
+        color: white;
+        font-size: 20px;
+      }
+    }
+
     .aside-button_1 {
       display: flex;
       width: 100%;
@@ -99,9 +119,7 @@ export default {
       }
     }
 
-
     .aside-button_2 {
-    
       display: flex;
       width: 100%;
       text-align: left;
@@ -123,10 +141,6 @@ export default {
         height: 20px;
       }
     }
-
-
-
-
   }
 }
 </style>
