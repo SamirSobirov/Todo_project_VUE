@@ -1,40 +1,38 @@
 <template>
-    <aside v-if="isAsideVisible" class="aside-block">
-      <div class="box">
-        <div class="aside-box1">
-          <h3>
-            TODO: рабочее пространство
-            <p>Бесплатно</p>
-          </h3>
-          <button @click="toggleAside">
-            <img src="../../public/icons/arrow_left.svg" alt="arrow" />
-          </button>
-        </div>
-  
-        <hr />
-  
-        <button class="aside-button_1">
-          <img src="../../public/icons/board.svg" alt="" />
-          <p>Доски</p>
+  <aside v-if="isAsideVisible" class="aside-block">
+    <div class="box">
+      <div class="aside-box1">
+        <h3>
+          TODO: рабочее пространство
+          <p>Бесплатно</p>
+        </h3>
+        <button @click="toggleAside">
+          <img src="../../public/icons/arrow_left.svg" alt="arrow" />
         </button>
-  
-        <button class="aside-button_2">
-          <img src="../../public/icons/participants.svg" alt="" />
-          <p>Участники</p>
-        </button>
-  
-        <div class="aside-box2">
-          <p>Режимы просмотра рабочего пространства...</p>
-          <div class="aside-item_2"></div>
-        </div>
       </div>
-    </aside>
-  
-    <!-- Кнопка для повторного открытия (опционально) -->
-    <button v-else @click="toggleAside" class="open-aside">
-      Open Aside
-    </button>
-  </template>
+
+      <hr />
+
+      <button class="aside-button_1">
+        <img src="../../public/icons/board.svg" alt="" />
+        <p>Доски</p>
+      </button>
+
+      <button class="aside-button_2">
+        <img src="../../public/icons/participants.svg" alt="" />
+        <p>Участники</p>
+      </button>
+
+      <div class="aside-box2">
+        <p>Режимы просмотра рабочего пространства...</p>
+        <div class="aside-item_2"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Кнопка для повторного открытия (опционально) -->
+  <button v-else @click="toggleAside" class="open-aside">Open Aside</button>
+</template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
@@ -103,10 +101,6 @@ export default defineComponent({
       align-items: center;
       padding: 10px 10px;
 
-
-
-
-      
       p {
         color: white;
         font-size: 20px;
