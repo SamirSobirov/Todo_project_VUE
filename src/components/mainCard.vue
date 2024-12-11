@@ -5,14 +5,13 @@
       <div class="board__cards"></div>
 
       <div class="input-container">
-        <input type="text" id="input-field" />
+        <input type="text" id="input-field" placeholder="" />
         <label for="input-field" class="placeholder">
           Введите название или вставьте <br />
           ссылку
         </label>
-
-
       </div>
+
       <button class="board__add-button">
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
@@ -24,12 +23,13 @@
       <div class="board__cards"></div>
 
       <div class="input-container">
-        <input type="text" id="input-field" />
+        <input type="text" id="input-field" placeholder="" />
         <label for="input-field" class="placeholder">
           Введите название или вставьте <br />
           ссылку
         </label>
       </div>
+
       <button class="board__add-button">
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
@@ -41,12 +41,13 @@
       <div class="board__cards"></div>
 
       <div class="input-container">
-        <input type="text" id="input-field" />
+        <input type="text" id="input-field" placeholder="" />
         <label for="input-field" class="placeholder">
           Введите название или вставьте <br />
           ссылку
         </label>
       </div>
+
       <button class="board__add-button">
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
@@ -129,9 +130,6 @@
     font-size: 14px;
   }
 
-
-
-
   .input-container {
     position: relative;
     width: 100%;
@@ -147,6 +145,16 @@
       font-size: 16px;
       color: #fff;
       outline: none;
+
+      &:focus + .placeholder,
+      &:not(:placeholder-shown) + .placeholder {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(
+          -20px
+        ); // Сдвигаем текст за пределы видимости (опционально)
+        transition: 0.2s ease-in-out;
+      }
     }
 
     .placeholder {
@@ -159,13 +167,8 @@
       pointer-events: none;
       white-space: pre-wrap;
       transition: 0.2s ease-in-out;
-
-      input:focus + &,
-      input:not(:placeholder-shown) + & {
-        top: 5px;
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.8);
-      }
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -173,7 +176,6 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-
 
 const isInputVisible = ref(false);
 
