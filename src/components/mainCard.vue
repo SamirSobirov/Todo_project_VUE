@@ -131,6 +131,7 @@
   }
 
   .input-container {
+    display: none;
     position: relative;
     width: 100%;
 
@@ -175,13 +176,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-
-const isInputVisible = ref(false);
-
-const toggleInput = () => {
-  isInputVisible.value = !isInputVisible.value;
-};
+import { defineComponent} from "vue";
 
 export default defineComponent({
   name: "MainCardVue",
