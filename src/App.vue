@@ -4,6 +4,7 @@
   <div>
     <headerVue />
     <asideVue />
+    <mainVue />
   </div>
 </template>
 
@@ -12,12 +13,15 @@
 <script>
 import asideVue from "./components/aside.vue";
 import headerVue from "./components/header.vue";
+import mainVue from './components/main.vue';
+
 
 export default {
   name: "App",
   components: {
     headerVue,
-    asideVue
+    asideVue,
+    mainVue
   },
 };
 </script>
