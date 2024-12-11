@@ -22,15 +22,15 @@
   height: 56px;
   width: 100%;
   background-color: #00000058;
-  transition: transform 0.3s ease-in-out; // Плавное перемещение
+  transition: transform 0.3s ease-in-out; 
 
   &.shifted {
-    transform: translateX(-250px); // Сдвиг текста влево, когда панель закрыта (250px — это ширина aside)
+    transform: translateX(-250px); 
   }
 
   h1 {
-    margin: 0 auto; // Центровка текста по умолчанию
-    font-size: 20px;
+    padding-left: 500px;
+    font-size: 30px;
     color: white;
   }
 }</style>
