@@ -89,7 +89,7 @@
 
     & > .board__cards {
       width: 100%;
-      height: 200px;
+      height: 100px;
       margin: 10px 0;
       background-color: #ffffff11;
       border-radius: 8px;
