@@ -32,7 +32,7 @@
       </div>
 
 
-      <div class="aside-box4">
+      <div class="aside-box3">
         <button class="aside-button_2">
           <img src="../../public/icons/participants.svg" alt="">
           <p>Таблица</p>
@@ -71,15 +71,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-
-.aside-box4 {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  gap: 20px;
-
-}
-
 .aside-block {
   width: 500px;
   height: 100vh;
