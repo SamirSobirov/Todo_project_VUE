@@ -29,7 +29,20 @@
 
       <div class="aside-box2">
         <p>Режимы просмотра рабочего пространства...</p>
-        <div class="aside-item_2"></div>
+      </div>
+
+
+      <div class="aside-box4">
+        <button class="aside-button_2">
+          <img src="../../public/icons/participants.svg" alt="">
+          <p>Таблица</p>
+
+        </button>
+
+        <button class="aside-button_2" style="padding-left: 15px;">
+          <img src="../../public/icons/participants.svg" alt="">
+          <p>Календарь</p>
+        </button>
       </div>
     </div>
   </aside>
@@ -58,6 +71,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
+.aside-box4 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+
+}
 
 .aside-block {
   width: 500px;
@@ -134,17 +155,22 @@ export default defineComponent({
       border: none;
       background-color: #161a1d;
       color: white;
-      gap: 12px;
 
       p {
+        padding: 10px 10px;
         font-weight: 100;
         font-size: 17px;
       }
 
       img {
+        padding-left: 2px;
         width: 20px;
         height: 20px;
       }
+
+      &:hover {
+          background-color: #424242;
+        }
     }
 
     .aside-box2 {
@@ -153,11 +179,14 @@ export default defineComponent({
       align-items: center;
       padding: 10px;
 
+   
+
       p {
         color: white;
         font-size: 20px;
       }
     }
+    
   }
 }
 
