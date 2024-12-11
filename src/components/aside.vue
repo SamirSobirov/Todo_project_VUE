@@ -120,7 +120,6 @@ export default defineComponent({
       padding-right: 380px;
     }
 
-    // Кнопка "Участники"
     .aside-button_2 {
       @extend .aside-button-base;
       padding-right: 350px;
