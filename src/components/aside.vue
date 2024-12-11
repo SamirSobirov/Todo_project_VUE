@@ -13,6 +13,8 @@
 
       <hr />
 
+
+      <div class="aside-box3">
       <button class="aside-button_1">
         <img src="../../public/icons/board.svg" alt="" />
         <p>Доски</p>
@@ -22,6 +24,8 @@
         <img src="../../public/icons/participants.svg" alt="" />
         <p>Участники</p>
       </button>
+
+    </div>
 
       <div class="aside-box2">
         <p>Режимы просмотра рабочего пространства...</p>
@@ -54,6 +58,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
+
+
 .aside-block {
   width: 500px;
   height: 100vh;
@@ -67,12 +74,14 @@ export default defineComponent({
     justify-content: center;
 
     .aside-box1 {
+      margin-top: 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 10px;
+      margin-bottom: 20px;
       h3 {
-        font-size: 18px;
+        font-size: 28px;
         color: #9fadbc;
 
         p {
@@ -98,6 +107,13 @@ export default defineComponent({
       button:hover {
         background-color: #424242;
       }
+    }
+
+    .aside-box3 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      gap: 30px;
     }
 
     .aside-box2 {
