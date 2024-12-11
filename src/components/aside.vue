@@ -64,7 +64,7 @@ export default defineComponent({
 
 <style lang="scss">
 .aside-block {
-  width: 500px;
+  width: 490px;
   height: 100vh;
   background-color: #161a1d;
   display: flex;
@@ -125,7 +125,7 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       margin-top: 40px;
-      gap: 30px;
+      gap: 15px;
     }
 
     .aside-button_1 {
