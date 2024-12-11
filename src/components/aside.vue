@@ -59,8 +59,6 @@ export default defineComponent({
 
 <style lang="scss">
 
-
-
 .aside-block {
   width: 500px;
   height: 100vh;
@@ -69,17 +67,18 @@ export default defineComponent({
   flex-direction: column;
 
   .box {
-    padding: 0px 10px;
+    padding: 0 10px;
     align-items: center;
     justify-content: center;
 
     .aside-box1 {
       margin-top: 30px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 10px;
-      margin-bottom: 20px;
+      padding: 10px;
+
       h3 {
         font-size: 28px;
         color: #9fadbc;
@@ -93,7 +92,7 @@ export default defineComponent({
       button {
         background-color: #161a1d;
         border: none;
-        padding: 10px 10px;
+        padding: 10px;
         cursor: pointer;
         border-radius: 4px;
         transition: background-color 0.3s ease;
@@ -102,10 +101,10 @@ export default defineComponent({
           height: 22px;
           width: 22px;
         }
-      }
 
-      button:hover {
-        background-color: #424242;
+        &:hover {
+          background-color: #424242;
+        }
       }
     }
 
@@ -116,63 +115,51 @@ export default defineComponent({
       gap: 30px;
     }
 
+    .aside-button_1 {
+      @extend .aside-button-base;
+      padding-right: 380px;
+    }
+
+    // Кнопка "Участники"
+    .aside-button_2 {
+      @extend .aside-button-base;
+      padding-right: 350px;
+    }
+
+    .aside-button-base {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: #161a1d;
+      color: white;
+      gap: 12px;
+
+      p {
+        font-weight: 100;
+        font-size: 17px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
     .aside-box2 {
       margin-top: 50px;
       display: flex;
       align-items: center;
-      padding: 10px 10px;
+      padding: 10px;
 
       p {
         color: white;
         font-size: 20px;
       }
     }
-
-    .aside-button_1 {
-      display: flex;
-      width: 100%;
-      text-align: left;
-      padding-right: 380px;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background-color: #161a1d;
-      color: white;
-      gap: 12px;
-
-      p {
-        font-weight: 100;
-        font-size: 17px;
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    .aside-button_2 {
-      display: flex;
-      width: 100%;
-      text-align: left;
-      padding-right: 350px;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background-color: #161a1d;
-      color: white;
-      gap: 12px;
-
-      p {
-        font-weight: 100;
-        font-size: 17px;
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
   }
 }
+
 </style>
