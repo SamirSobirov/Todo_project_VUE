@@ -30,7 +30,6 @@
     </div>
   </aside>
 
-  <!-- Кнопка для повторного открытия (опционально) -->
   <button v-else @click="toggleAside" class="open-aside">Open Aside</button>
 </template>
 
@@ -83,15 +82,21 @@ export default defineComponent({
       }
 
       button {
-        border: none;
-        height: 32px;
-        width: 32px;
         background-color: #161a1d;
+        border: none;
+        padding: 10px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
 
         img {
           height: 22px;
           width: 22px;
         }
+      }
+
+      button:hover {
+        background-color: #424242;
       }
     }
 
