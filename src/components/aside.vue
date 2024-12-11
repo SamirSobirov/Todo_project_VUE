@@ -1,3 +1,5 @@
+
+
 <template>
   <div>
     <aside :class="{'aside-block': true, 'hidden': !isAsideVisible}">
@@ -42,6 +44,7 @@
 </template>
 
 <script lang="ts">
+  
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -63,6 +66,19 @@ export default defineComponent({
 
 
 <style lang="scss">
+
+.aside-block {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out;
+
+  &.shifted {
+    transform: translateX(-250px);
+  }
+}
+
+
 .aside-block {
   width: 490px;
   height: 100vh;
@@ -131,6 +147,7 @@ export default defineComponent({
     .aside-button_1 {
       @extend .aside-button-base;
       padding-right: 380px;
+      width: 100%;
     }
 
     .aside-button_2 {
