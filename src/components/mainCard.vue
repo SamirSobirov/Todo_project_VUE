@@ -21,11 +21,43 @@
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
       </button>
+
+      <div class="add_task_box">
+        <button class="add_task">Добавить карточку</button>
+
+        <button class="del_task">X</button>
+      </div>
     </div>
   </main>
 </template>
 
 <style lang="scss">
+.add_task_box {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 56px;
+  gap: 5px;
+
+  .add_task {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+  &:hover {
+        background-color: #73b7ff;
+  }
+  }
+  .del_task {
+    border-radius: 5px;
+    border: none;
+    padding: 8px 15px;
+    background-color: rgba(44, 44, 44, 0.447);
+    color: white;
+    &:hover {
+      background-color: #404040;
+    }
+  }
+}
 .board {
   margin-top: 30px;
   padding-left: 50px;
@@ -147,7 +179,7 @@
 
   .board__add-button {
     cursor: pointer;
-    background-color:rgba(44, 44, 44, 0.447) ;
+    background-color: rgba(44, 44, 44, 0.447);
     color: white;
     padding: 10px;
     border: none;
