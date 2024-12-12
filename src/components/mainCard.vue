@@ -152,6 +152,9 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
+    &:hover {
+      background-color: #0056b3;
+    }
   }
 }
 
