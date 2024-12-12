@@ -1,6 +1,10 @@
 <template>
-  <main class="board">
-    <div class="board__column" v-for="(column, index) in columns" :key="index">
+  <main class="board" :class="{ 'with-aside': isAsideVisible }">
+    <div
+      class="board__column"
+      v-for="(column, index) in columns"
+      :key="index"
+    >
       <h3 class="board__title">{{ column.title }}</h3>
       <div class="board__cards"></div>
 
@@ -25,10 +29,11 @@
   </main>
 </template>
 
+
 <style lang="scss">
 .board {
   margin-top: 30px;
-  padding-left: 500px;
+  padding-left: 50px;
   display: grid;
   grid-template-columns: repeat(3, 0fr);
   gap: 20px;
@@ -154,14 +159,28 @@
     border-radius: 5px;
   }
 }
+
+
+
+.board {
+  transition: margin-left 0.3s ease;
+
+  &.with-aside {
+    margin-left: 450px; 
+  }
+
+  &.without-aside {
+    margin-left: 0; 
+  }
+}
 </style>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent , ref} from "vue";
+import { isAsideVisible } from "./store";
 
 export default defineComponent({
-  name: "BoardColumn",
-
+  name: "BoardCardVue",
   setup() {
     const columns = ref([
       { title: "Нужно сделать", inputValue: "" },
@@ -178,6 +197,7 @@ export default defineComponent({
       columns,
       activeColumn,
       toggleInput,
+      isAsideVisible,
     };
   },
 });

@@ -44,13 +44,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
+import { isAsideVisible } from "./store";
 
 export default defineComponent({
   name: "AsideVue",
   setup() {
-    const isAsideVisible = ref(true);
-
     const toggleAside = () => {
       isAsideVisible.value = !isAsideVisible.value;
     };
