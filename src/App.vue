@@ -24,7 +24,7 @@ export default {
     headerVue,
     asideVue,
     mainVue,
-    mainCard
+    mainCard,
   },
 };
 </script>

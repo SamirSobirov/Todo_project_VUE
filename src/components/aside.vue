@@ -1,6 +1,6 @@
 <template>
   <div>
-    <aside :class="{'aside-block': true, 'hidden': !isAsideVisible}">
+    <aside :class="{ 'aside-block': true, hidden: !isAsideVisible }">
       <div class="box">
         <div class="aside-box1">
           <h3>
@@ -13,7 +13,7 @@
         </div>
         <hr />
         <div class="aside-box3">
-          <button class="aside-button_1">
+          <button class="aside-button_2" style="margin-right: 30px">
             <img src="../../public/icons/board.svg" alt="" />
             <p>Доски</p>
           </button>
@@ -27,22 +27,23 @@
         </div>
         <div class="aside-box3">
           <button class="aside-button_2">
-            <img src="../../public/icons/participants.svg" alt="">
+            <img src="../../public/icons/participants.svg" alt="" />
             <p>Таблица</p>
           </button>
-          <button class="aside-button_2" style="padding-left: 15px;">
-            <img src="../../public/icons/participants.svg" alt="">
+          <button class="aside-button_2" style="padding-left: 15px">
+            <img src="../../public/icons/participants.svg" alt="" />
             <p>Календарь</p>
           </button>
         </div>
       </div>
     </aside>
-    <button v-if="!isAsideVisible" @click="toggleAside" class="open-aside">Open Aside</button>
+    <button v-if="!isAsideVisible" @click="toggleAside" class="open-aside">
+      Open Aside
+    </button>
   </div>
 </template>
 
 <script lang="ts">
-  
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -62,9 +63,7 @@ export default defineComponent({
 });
 </script>
 
-
 <style lang="scss">
-
 .aside-block {
   width: 250px;
   height: 100%;
@@ -76,9 +75,8 @@ export default defineComponent({
   }
 }
 
-
 .aside-block {
-  width: 490px;
+  width: 430px;
   height: 100vh;
   background-color: #161a1d;
   display: flex;
@@ -86,7 +84,7 @@ export default defineComponent({
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(0); 
+  transform: translateX(0);
   transition: transform 0.3s ease-in-out;
 
   &.hidden {
@@ -94,7 +92,7 @@ export default defineComponent({
   }
 
   .box {
-    padding: 0 10px;
+    // padding: 0 10px;
     align-items: center;
     justify-content: center;
 
@@ -107,7 +105,7 @@ export default defineComponent({
       padding: 10px;
 
       h3 {
-        font-size: 28px;
+        font-size: 25px;
         color: #9fadbc;
 
         p {
@@ -139,18 +137,15 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       margin-top: 40px;
-      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      gap: 10px;
     }
-
-    .aside-button_1 {
-      @extend .aside-button-base;
-      padding-right: 380px;
-      width: 100%;
-    }
-
+    
     .aside-button_2 {
       @extend .aside-button-base;
-      padding-right: 350px;
+      padding-right: 280px;
     }
 
     .aside-button-base {
@@ -164,7 +159,7 @@ export default defineComponent({
       color: white;
 
       p {
-        padding: 10px 10px;
+        padding: 10px;
         font-weight: 100;
         font-size: 17px;
       }
@@ -181,7 +176,7 @@ export default defineComponent({
     }
 
     .aside-box2 {
-      margin-top: 50px;
+      margin-top: 40px;
       display: flex;
       align-items: center;
       padding: 10px;
@@ -197,7 +192,6 @@ export default defineComponent({
 .open-aside {
   position: fixed;
   top: 20px;
-  left: 20px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -210,5 +204,4 @@ export default defineComponent({
     background-color: #0056b3;
   }
 }
-
 </style>
