@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <aside :class="{'aside-block': true, 'hidden': !isAsideVisible}">

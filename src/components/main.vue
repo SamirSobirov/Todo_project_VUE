@@ -8,10 +8,14 @@
     </header>
   </template>
   
-  <script>
-  export default {
-    name: "MainVue"
-  };
+  <script lang="ts">
+  
+  import { defineComponent } from "vue";
+  
+  export default defineComponent({
+    name: "mainVue",
+  
+  });
   </script>
 
 
