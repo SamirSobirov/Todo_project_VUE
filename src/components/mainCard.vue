@@ -12,7 +12,6 @@
         </div>
       </div>
 
-      <!-- Поле ввода -->
       <div :class="['input-container', { active: column.isAddTaskBoxVisible }]">
         <input
           type="text"
@@ -22,7 +21,6 @@
         />
       </div>
 
-      <!-- Кнопка добавления задачи -->
       <button
         v-if="!column.isAddTaskBoxVisible"
         class="board__add-button"
@@ -32,7 +30,6 @@
         <p class="board__add-text">Добавить карточку</p>
       </button>
 
-      <!-- Блок add_task_box -->
       <div v-if="column.isAddTaskBoxVisible" class="add_task_box">
         <button class="add_task" @click="addTask(index)">
           Добавить карточку
