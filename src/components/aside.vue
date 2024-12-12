@@ -102,11 +102,9 @@ export default defineComponent({
       align-items: center;
       justify-content: space-between;
       padding: 10px;
-
       h3 {
         font-size: 25px;
         color: #9fadbc;
-
         p {
           font-size: 14px;
           font-weight: 400;
@@ -116,7 +114,7 @@ export default defineComponent({
       button {
         background-color: #161a1d;
         border: none;
-        padding: 10px;
+        padding: 5px 5px;
         cursor: pointer;
         border-radius: 4px;
         transition: background-color 0.3s ease;
