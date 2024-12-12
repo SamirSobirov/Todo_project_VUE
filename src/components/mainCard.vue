@@ -105,8 +105,11 @@
       width: 100%;
       height: 100%;
       margin: 10px 0;
-      background-color: #ffffff11;
+      color: #d3d3d3;
+      padding: 15px 15px;
+      background-color: #d3d3d349;
       border-radius: 8px;
+      font-size: 14px;
     }
   }
 
