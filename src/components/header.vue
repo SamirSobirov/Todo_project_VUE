@@ -57,6 +57,7 @@ export default defineComponent({
         border-radius: 6px;
         border: none;
         background-color: #22272b;
+        color: white;
       }
     }
   }
