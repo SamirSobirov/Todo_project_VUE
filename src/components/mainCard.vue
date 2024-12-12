@@ -1,10 +1,6 @@
 <template>
   <main class="board" :class="{ 'with-aside': isAsideVisible }">
-    <div
-      class="board__column"
-      v-for="(column, index) in columns"
-      :key="index"
-    >
+    <div class="board__column" v-for="(column, index) in columns" :key="index">
       <h3 class="board__title">{{ column.title }}</h3>
       <div class="board__cards"></div>
 
@@ -28,7 +24,6 @@
     </div>
   </main>
 </template>
-
 
 <style lang="scss">
 .board {
@@ -160,23 +155,21 @@
   }
 }
 
-
-
 .board {
   transition: margin-left 0.3s ease;
 
   &.with-aside {
-    margin-left: 450px; 
+    margin-left: 450px;
   }
 
   &.without-aside {
-    margin-left: 0; 
+    margin-left: 0;
   }
 }
 </style>
 
 <script lang="ts">
-import { defineComponent , ref} from "vue";
+import { defineComponent, ref } from "vue";
 import { isAsideVisible } from "./store";
 
 export default defineComponent({
