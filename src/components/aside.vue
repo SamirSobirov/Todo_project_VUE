@@ -142,7 +142,7 @@ export default defineComponent({
       text-align: left;
       gap: 10px;
     }
-    
+
     .aside-button_2 {
       @extend .aside-button-base;
       padding-right: 280px;
@@ -192,6 +192,7 @@ export default defineComponent({
 .open-aside {
   position: fixed;
   top: 20px;
+  margin-left: 20px;
   background-color: #007bff;
   color: white;
   border: none;
