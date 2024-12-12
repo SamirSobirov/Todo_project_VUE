@@ -147,13 +147,13 @@
 
   .board__add-button {
     cursor: pointer;
-    background-color: #007bff;
+    background-color:rgba(44, 44, 44, 0.447) ;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     &:hover {
-      background-color: #0056b3;
+      background-color: #242424;
     }
   }
 }
