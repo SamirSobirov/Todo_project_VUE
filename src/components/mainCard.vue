@@ -4,28 +4,27 @@
       <h3 class="board__title">{{ column.title }}</h3>
       <div class="board__cards"></div>
 
-      <div :class="['input-container', { active: activeColumn === index }]">
+      <div :class="['input-container', { active: column.isAddTaskBoxVisible }]">
         <input
           type="text"
           :id="`input-field-${index}`"
-          placeholder=""
+          placeholder="Введите название задачи"
           v-model="column.inputValue"
         />
-        <label :for="`input-field-${index}`" class="placeholder">
-          Введите название или вставьте <br />
-          ссылку
-        </label>
       </div>
 
-      <button class="board__add-button" @click="toggleInput(index)">
+      <button
+        v-if="!column.isAddTaskBoxVisible"
+        class="board__add-button"
+        @click="toggleAddTaskBox(index)"
+      >
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
       </button>
 
-      <div class="add_task_box">
+      <div v-if="column.isAddTaskBoxVisible" class="add_task_box">
         <button class="add_task">Добавить карточку</button>
-
-        <button class="del_task">X</button>
+        <button class="del_task" @click="toggleAddTaskBox(index)">X</button>
       </div>
     </div>
   </main>
@@ -43,9 +42,9 @@
     border: none;
     border-radius: 5px;
     background-color: #007bff;
-  &:hover {
-        background-color: #73b7ff;
-  }
+    &:hover {
+      background-color: #73b7ff;
+    }
   }
   .del_task {
     border-radius: 5px;
@@ -135,7 +134,6 @@
     display: none;
     position: relative;
     width: 100%;
-    padding: 10px;
   }
 
   .input-container.active {
@@ -153,28 +151,7 @@
     font-size: 16px;
     color: #fff;
     outline: none;
-  }
-
-  .input-container input:focus + .placeholder,
-  .input-container input:not(:placeholder-shown) + .placeholder {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: 0.2s ease-in-out;
-  }
-
-  .input-container .placeholder {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    pointer-events: none;
-    white-space: pre-wrap;
-    transition: 0.2s ease-in-out;
-    opacity: 1;
-    visibility: visible;
+    font-size: 12px;
   }
 
   .board__add-button {
@@ -211,20 +188,19 @@ export default defineComponent({
   name: "BoardCardVue",
   setup() {
     const columns = ref([
-      { title: "Нужно сделать", inputValue: "" },
-      { title: "В процессе", inputValue: "" },
-      { title: "Готово", inputValue: "" },
+      { title: "Нужно сделать", inputValue: "", isAddTaskBoxVisible: false },
+      { title: "В процессе", inputValue: "", isAddTaskBoxVisible: false },
+      { title: "Готово", inputValue: "", isAddTaskBoxVisible: false },
     ]);
-    const activeColumn = ref<number | null>(null);
 
-    const toggleInput = (index: number) => {
-      activeColumn.value = activeColumn.value === index ? null : index;
+    const toggleAddTaskBox = (index: number) => {
+      columns.value[index].isAddTaskBoxVisible =
+        !columns.value[index].isAddTaskBoxVisible;
     };
 
     return {
       columns,
-      activeColumn,
-      toggleInput,
+      toggleAddTaskBox,
       isAsideVisible,
     };
   },
