@@ -1,54 +1,23 @@
 <template>
   <main class="board">
-    <div class="board__column">
-      <h3 class="board__title">Нужно сделать</h3>
+    <div class="board__column" v-for="(column, index) in columns" :key="index">
+      <h3 class="board__title">{{ column.title }}</h3>
       <div class="board__cards"></div>
 
-      <div class="input-container">
-        <input type="text" id="input-field" placeholder="" />
-        <label for="input-field" class="placeholder">
+      <div :class="['input-container', { active: activeColumn === index }]">
+        <input
+          type="text"
+          :id="`input-field-${index}`"
+          placeholder=""
+          v-model="column.inputValue"
+        />
+        <label :for="`input-field-${index}`" class="placeholder">
           Введите название или вставьте <br />
           ссылку
         </label>
       </div>
 
-      <button class="board__add-button">
-        <p class="board__add-icon">+</p>
-        <p class="board__add-text">Добавить карточку</p>
-      </button>
-    </div>
-
-    <div class="board__column">
-      <h3 class="board__title">В процессе</h3>
-      <div class="board__cards"></div>
-
-      <div class="input-container">
-        <input type="text" id="input-field" placeholder="" />
-        <label for="input-field" class="placeholder">
-          Введите название или вставьте <br />
-          ссылку
-        </label>
-      </div>
-
-      <button class="board__add-button">
-        <p class="board__add-icon">+</p>
-        <p class="board__add-text">Добавить карточку</p>
-      </button>
-    </div>
-
-    <div class="board__column">
-      <h3 class="board__title">Готово</h3>
-      <div class="board__cards"></div>
-
-      <div class="input-container">
-        <input type="text" id="input-field" placeholder="" />
-        <label for="input-field" class="placeholder">
-          Введите название или вставьте <br />
-          ссылку
-        </label>
-      </div>
-
-      <button class="board__add-button">
+      <button class="board__add-button" @click="toggleInput(index)">
         <p class="board__add-icon">+</p>
         <p class="board__add-text">Добавить карточку</p>
       </button>
@@ -134,51 +103,82 @@
     display: none;
     position: relative;
     width: 100%;
+    padding: 10px;
+  }
 
-    input {
-      display: flex;
-      width: 100%;
-      border: none;
-      background-color: rgba(44, 44, 44, 0.447);
-      padding: 15px;
-      height: 45px;
-      border-radius: 12px;
-      font-size: 16px;
-      color: #fff;
-      outline: none;
+  .input-container.active {
+    display: block;
+  }
 
-      &:focus + .placeholder,
-      &:not(:placeholder-shown) + .placeholder {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(
-          -20px
-        ); // Сдвигаем текст за пределы видимости (опционально)
-        transition: 0.2s ease-in-out;
-      }
-    }
+  .input-container input {
+    display: flex;
+    width: 100%;
+    border: none;
+    background-color: rgba(44, 44, 44, 0.447);
+    padding: 15px;
+    height: 45px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+  }
 
-    .placeholder {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-      pointer-events: none;
-      white-space: pre-wrap;
-      transition: 0.2s ease-in-out;
-      opacity: 1;
-      visibility: visible;
-    }
+  .input-container input:focus + .placeholder,
+  .input-container input:not(:placeholder-shown) + .placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.2s ease-in-out;
+  }
+
+  .input-container .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    white-space: pre-wrap;
+    transition: 0.2s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .board__add-button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
   }
 }
 </style>
 
 <script lang="ts">
-import { defineComponent} from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: "MainCardVue",
+  name: "BoardColumn",
+
+  setup() {
+    const columns = ref([
+      { title: "Нужно сделать", inputValue: "" },
+      { title: "В процессе", inputValue: "" },
+      { title: "Готово", inputValue: "" },
+    ]);
+    const activeColumn = ref<number | null>(null);
+
+    const toggleInput = (index: number) => {
+      activeColumn.value = activeColumn.value === index ? null : index;
+    };
+
+    return {
+      columns,
+      activeColumn,
+      toggleInput,
+    };
+  },
 });
 </script>
