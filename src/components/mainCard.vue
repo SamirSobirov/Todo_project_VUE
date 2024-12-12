@@ -122,7 +122,6 @@ export default defineComponent({
         console.error(`Invalid column index: ${index}`);
       }
     };
-
     return {
       columns,
       addTask,
