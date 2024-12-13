@@ -60,13 +60,13 @@ export default defineComponent({
       {
         title: "Нужно сделать",
         inputValue: "",
-        tasks: ["Задача 1", "Задача 2"],
+        tasks: ["Задача 1"],
         isAddTaskBoxVisible: false,
       },
       {
         title: "В процессе",
         inputValue: "",
-        tasks: ["Задача 3"],
+        tasks: [],
         isAddTaskBoxVisible: false,
       },
       {
