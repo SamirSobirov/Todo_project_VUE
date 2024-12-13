@@ -278,11 +278,17 @@
         border-radius: 8px;
         box-shadow: 9px 12px 15px rgba(0, 0, 0, 0.8);
 
+        &.drop-target {
+            border: 2px dashed #007bff;
+            background-color: rgba(0, 123, 255, 0.1); 
+        }
+
         &>h3 {
             color: white;
         }
 
         &>.board__card {
+            cursor: grab;
             width: 100%;
             height: 100%;
             margin: 5px 0;
@@ -291,6 +297,10 @@
             background-color: #d3d3d349;
             border-radius: 8px;
             font-size: 14px;
+
+            &:active {
+                cursor: grabbing;
+            }
         }
     }
 

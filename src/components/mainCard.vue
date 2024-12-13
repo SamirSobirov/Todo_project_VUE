@@ -108,7 +108,7 @@ export default defineComponent({
           saveToLocalStorage();
         }
       } else {
-        console.error(`Invalid column index: ${index}`);
+        console.error(`Error in tasks: ${index}`);
       }
     };
 
@@ -117,7 +117,7 @@ export default defineComponent({
         columns.value[index].isAddTaskBoxVisible =
           !columns.value[index].isAddTaskBoxVisible;
       } else {
-        console.error(`Invalid column index: ${index}`);
+        console.error(`Error in tasks: ${index}`);
       }
     };
     return {
