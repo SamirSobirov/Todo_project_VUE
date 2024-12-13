@@ -2,15 +2,14 @@
   <main class="board" :class="{ 'with-aside': isAsideVisible }">
     <div class="board__column" v-for="(column, index) in columns" :key="index">
       <h3 class="board__title">{{ column.title }}</h3>
-      <div class="board__cards">
-        <div
-          v-for="(task, taskIndex) in column.tasks"
-          :key="taskIndex"
-          class="board__card"
-        >
-          {{ task }}
-        </div>
+      <div
+        v-for="(task, taskIndex) in column.tasks"
+        :key="taskIndex"
+        class="board__card"
+      >
+        {{ task }}
       </div>
+
       <div :class="['input-container', { active: column.isAddTaskBoxVisible }]">
         <input
           type="text"
@@ -19,23 +18,26 @@
           v-model="column.inputValue"
         />
       </div>
+
       <button
         v-if="!column.isAddTaskBoxVisible"
         class="board__add-button"
         @click="toggleAddTaskBox(index)"
       >
         <p class="board__add-icon">+</p>
-        <p class="board__add-text">Добавить карточку</p>
+        <p class="board__add-text">Добавить задачу</p>
       </button>
+
       <div v-if="column.isAddTaskBoxVisible" class="add_task_box">
         <button class="add_task" @click="addTask(index)">
-          Добавить карточку
+          Добавить задачу
         </button>
         <button class="del_task" @click="toggleAddTaskBox(index)">X</button>
       </div>
     </div>
   </main>
 </template>
+
 
 <style lang="scss"></style>
 
