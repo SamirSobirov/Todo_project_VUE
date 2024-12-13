@@ -132,7 +132,7 @@ export default defineComponent({
         try {
           columns.value = JSON.parse(storedColumns) || columns.value;
         } catch (error) {
-          console.error("Error parsing stored columns:", error);
+          console.error("Error in columns:", error);
         }
       }
     });
