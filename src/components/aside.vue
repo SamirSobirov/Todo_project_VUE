@@ -59,7 +59,7 @@ export default defineComponent({
       toggleAside,
     };
   },
-});
+}); 
 </script>
 
 <style lang="scss"></style>
