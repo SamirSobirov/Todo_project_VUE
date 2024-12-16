@@ -48,7 +48,7 @@ import { defineComponent } from "vue";
 import { isAsideVisible } from "./store";
 
 export default defineComponent({
-  name: "AsideVue",
+  name: "WorkspaceSidebar",
   setup() {
     const toggleAside = () => {
       isAsideVisible.value = !isAsideVisible.value;
