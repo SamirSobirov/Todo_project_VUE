@@ -14,11 +14,11 @@
       <div class="sidebar__menu">
         <button class="sidebar__button sidebar__button--active">
           <img :src="boardIcon" alt="" />
-          <p>Доски</p>
+          <p><i>Доски</i></p>
         </button>
         <button class="sidebar__button">
           <img :src="participantsIcon" alt="" />
-          <p>Участники</p>
+          <p><i>Участники</i></p>
         </button>
       </div>
       <div class="sidebar__view-mode">
