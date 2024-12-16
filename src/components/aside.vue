@@ -44,15 +44,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import arrowLeftIcon from "../assets/images/arrow_left.svg";
 import boardIcon from "../assets/images/board.svg";
 import participantsIcon from "../assets/images/participants.svg";
 import { isAsideVisible } from "../main";
 
+interface SetupReturn {
+  isAsideVisible: typeof isAsideVisible;
+  toggleAside: () => void;
+  arrowLeftIcon: string;
+  boardIcon: string;
+  participantsIcon: string;
+}
+
 export default defineComponent({
   name: "WorkspaceSidebar",
-  setup() {
+  setup(): SetupReturn {
     const toggleAside = () => {
       isAsideVisible.value = !isAsideVisible.value;
     };
@@ -67,6 +75,5 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style lang="scss"></style>
