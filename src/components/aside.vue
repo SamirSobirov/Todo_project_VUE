@@ -1,47 +1,46 @@
 <template>
   <div>
-    <aside :class="{ 'aside-block': true, hidden: !isAsideVisible }">
-      <div class="box">
-        <div class="aside-box1">
-          <h3>
-            TODO: рабочее пространство
-            <p>Бесплатно</p>
-          </h3>
-          <button @click="toggleAside">
-            <img :src="arrowLeftIcon" alt="arrow" />
-          </button>
-        </div>
-        <hr />
-        <div class="aside-box3">
-          <button class="aside-button_2" style="margin-right: 30px">
-            <img :src="boardIcon" alt="" />
-            <p>Доски</p>
-          </button>
-          <button class="aside-button_2">
-            <img :src="participantsIcon" alt="" />
-            <p>Участники</p>
-          </button>
-        </div>
-        <div class="aside-box2">
-          <p>Режимы просмотра рабочего пространства...</p>
-        </div>
-        <div class="aside-box3">
-          <button class="aside-button_2">
-            <img :src="participantsIcon" alt="" />
-            <p><i>Таблица</i></p>
-          </button>
-          <button class="aside-button_2" style="padding-left: 15px">
-            <img :src="participantsIcon" alt="" />
-            <p><i>Календарь</i></p>
-          </button>
-        </div>
+    <aside :class="['sidebar', { 'sidebar--hidden': !isAsideVisible }]">
+      <div class="sidebar__header">
+        <h3>
+          TODO: рабочее пространство
+          <p>Бесплатно</p>
+        </h3>
+        <button @click="toggleAside">
+          <img :src="arrowLeftIcon" alt="arrow" />
+        </button>
+      </div>
+      <hr />
+      <div class="sidebar__menu">
+        <button class="sidebar__button sidebar__button--active">
+          <img :src="boardIcon" alt="" />
+          <p>Доски</p>
+        </button>
+        <button class="sidebar__button">
+          <img :src="participantsIcon" alt="" />
+          <p>Участники</p>
+        </button>
+      </div>
+      <div class="sidebar__view-mode">
+        <p>Режимы просмотра рабочего пространства...</p>
+      </div>
+      <div class="sidebar__menu">
+        <button class="sidebar__button">
+          <img :src="participantsIcon" alt="" />
+          <p><i>Таблица</i></p>
+        </button>
+        <button class="sidebar__button sidebar__button--with-icon">
+          <img :src="participantsIcon" alt="" />
+          <p><i>Календарь</i></p>
+        </button>
       </div>
     </aside>
-    <button v-if="!isAsideVisible" @click="toggleAside" class="open-aside">
+    <button v-if="!isAsideVisible" @click="toggleAside" class="sidebar__toggle">
       Open Aside
     </button>
   </div>
 </template>
+
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";

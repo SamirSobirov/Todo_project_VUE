@@ -2,8 +2,7 @@
 
 $primary-font: 'Roboto', sans-serif;
 $secondary-font: 'Arial', sans-serif;
-
-.aside-block {
+.sidebar {
     width: 430px;
     height: 100vh;
     background-color: #161a1d;
@@ -16,114 +15,107 @@ $secondary-font: 'Arial', sans-serif;
     transition: transform 0.3s ease-in-out;
     font-family: $primary-font;
 
-    &.hidden {
+    &--hidden {
         transform: translateX(-100%);
     }
 
-    .box {
+    &__header {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 10px;
 
-        .aside-box1 {
-            margin-top: 30px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-
-            h3 {
-                font-size: 25px;
-                color: #9fadbc;
-                font-weight: 500;
-
-                p {
-                    font-size: 14px;
-                    font-weight: 400;
-                }
-            }
-
-            button {
-                background-color: #161a1d;
-                border: none;
-                padding: 5px 5px;
-                cursor: pointer;
-                border-radius: 4px;
-                transition: background-color 0.3s ease;
-
-                img {
-                    height: 22px;
-                    width: 22px;
-                }
-
-                &:hover {
-                    background-color: #424242;
-                }
-            }
+        h3 {
+            font-size: 25px;
+            color: #9fadbc;
+            font-weight: 500;
         }
 
-        .aside-box3 {
-            display: flex;
-            flex-direction: column;
-            margin-top: 40px;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            gap: 10px;
+        p {
+            font-size: 14px;
+            font-weight: 400;
         }
 
-        .aside-button_2 {
-            @extend .aside-button-base;
-            padding-right: 280px;
-            text-decoration-line: underline;
-
-            font-family: $secondary-font;
-        }
-
-        .aside-button-base {
-            display: flex;
-            width: 100%;
-            text-align: left;
-            align-items: center;
-            justify-content: center;
-            border: none;
+        button {
             background-color: #161a1d;
-            color: white;
-            font-family: $primary-font;
-
-            p {
-                padding: 10px;
-                font-weight: 100;
-                font-size: 16px;
-            }
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
 
             img {
-                padding-left: 2px;
-                width: 20px;
-                height: 20px;
+                height: 22px;
+                width: 22px;
             }
 
             &:hover {
                 background-color: #424242;
             }
         }
+    }
 
-        .aside-box2 {
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            padding: 10px;
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 10px;
+    }
 
-            p {
-                color: white;
-                font-size: 18px;
-                font-weight: 500;
-            }
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        width: 100%;
+        height: 50px; 
+        text-align: center;
+        border: none;
+        background-color: #161a1d;
+        color: white;
+        font-family: $primary-font;
+        padding: 10px;
+        cursor: pointer;
+
+        p {
+            margin: 0;
+            font-weight: 400;
+            font-size: 16px;
         }
+
+        img {
+            margin-right: 8px; 
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            background-color: #424242;
+        }
+
+        // &--active {
+        //     background-color: #007bff;
+        // }
+
+        &--with-icon {
+            padding-left: 15px;
+        }
+    }
+
+    &__view-mode {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        padding: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 
-.open-aside {
+.sidebar__toggle {
     position: fixed;
     top: 20px;
     margin-left: 20px;
@@ -142,6 +134,7 @@ $secondary-font: 'Arial', sans-serif;
         background-color: #0056b3;
     }
 }
+
 
 
 
