@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { isAsideVisible } from "./store";
+import { isAsideVisible } from "../main";
 
 export default defineComponent({
   name: "WorkspaceSidebar",

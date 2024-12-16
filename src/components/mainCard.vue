@@ -51,7 +51,7 @@
 <style lang="scss"></style>
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
-import { isAsideVisible } from "./store";
+import { isAsideVisible } from "../main";
 
 export default defineComponent({
   name: "BoardCardVue",
