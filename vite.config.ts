@@ -7,6 +7,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  assetsInclude: ['**/*.svg'],
   plugins: [
     vue(),
     vueDevTools(),

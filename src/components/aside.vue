@@ -8,17 +8,17 @@
             <p>Бесплатно</p>
           </h3>
           <button @click="toggleAside">
-            <img src="../assets/images/arrow_left.svg" alt="arrow" />
+            <img :src="arrowLeftIcon" alt="arrow" />
           </button>
         </div>
         <hr />
         <div class="aside-box3">
           <button class="aside-button_2" style="margin-right: 30px">
-            <img src="../assets/images/board.svg" alt="" />
+            <img :src="boardIcon" alt="" />
             <p>Доски</p>
           </button>
           <button class="aside-button_2">
-            <img src="../assets/images/participants.svg" alt="" />
+            <img :src="participantsIcon" alt="" />
             <p>Участники</p>
           </button>
         </div>
@@ -27,11 +27,11 @@
         </div>
         <div class="aside-box3">
           <button class="aside-button_2">
-            <img src="../assets/images/participants.svg" alt="" />
+            <img :src="participantsIcon" alt="" />
             <p>Таблица</p>
           </button>
           <button class="aside-button_2" style="padding-left: 15px">
-            <img src="../assets/images/participants.svg" alt="" />
+            <img :src="participantsIcon" alt="" />
             <p>Календарь</p>
           </button>
         </div>
@@ -45,6 +45,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import arrowLeftIcon from "../assets/images/arrow_left.svg";
+import boardIcon from "../assets/images/board.svg";
+import participantsIcon from "../assets/images/participants.svg";
 import { isAsideVisible } from "../main";
 
 export default defineComponent({
@@ -57,9 +60,13 @@ export default defineComponent({
     return {
       isAsideVisible,
       toggleAside,
+      arrowLeftIcon,
+      boardIcon,
+      participantsIcon,
     };
   },
 });
 </script>
+
 
 <style lang="scss"></style>
