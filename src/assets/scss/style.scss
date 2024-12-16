@@ -140,50 +140,74 @@ $secondary-font: 'Arial', sans-serif;
 
 //header.vue
 .header {
-    height: 70px;
     width: 100%;
+    height: 70px;
     background-color: #1d2125;
+    display: flex;
+    align-items: center;
 
-    .nav {
+    &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
         height: 100%;
         padding: 0 20px;
 
-        h1 {
+        &__title {
+            font-size: 24px;
+            font-weight: 600;
             color: #fff;
         }
 
-        .box {
+        &__controls {
             display: flex;
             gap: 10px;
+            align-items: center;
 
-            button {
+            &-input {
+                padding: 8px 15px;
+                border-radius: 8px;
+                border: 1px solid transparent;
+                background-color: #22272b;
+                color: #fff;
+                font-size: 14px;
+                transition: border-color 0.3s ease;
+
+                &::placeholder {
+                    color: #9fadbc;
+                }
+
+                &:focus {
+                    border-color: #007bff;
+                    outline: none;
+                }
+            }
+
+            &-button {
                 background-color: #007bff;
                 color: #fff;
-                /* Цвет текста */
                 border: none;
+                border-radius: 8px;
                 padding: 10px 20px;
                 font-size: 16px;
+                font-weight: 500;
                 cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+                transition: background-color 0.3s ease, transform 0.2s ease;
 
-            button:hover {
-                background-color: #73b7ff;
-            }
+                &:hover {
+                    background-color: #73b7ff;
+                    transform: scale(1.05);
+                }
 
-            input {
-                padding: 5px 20px;
-                border-radius: 6px;
-                border: none;
-                background-color: #22272b;
-                color: white;
+                &:active {
+                    transform: scale(0.95);
+                }
             }
         }
     }
 }
+
 
 
 
