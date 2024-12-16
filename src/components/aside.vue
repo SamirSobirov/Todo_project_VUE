@@ -8,17 +8,17 @@
             <p>Бесплатно</p>
           </h3>
           <button @click="toggleAside">
-            <img src="../../public/icons/arrow_left.svg" alt="arrow" />
+            <img src="../assets/images/arrow_left.svg" alt="arrow" />
           </button>
         </div>
         <hr />
         <div class="aside-box3">
           <button class="aside-button_2" style="margin-right: 30px">
-            <img src="../../public/icons/board.svg" alt="" />
+            <img src="../assets/images/board.svg" alt="" />
             <p>Доски</p>
           </button>
           <button class="aside-button_2">
-            <img src="../../public/icons/participants.svg" alt="" />
+            <img src="../assets/images/participants.svg" alt="" />
             <p>Участники</p>
           </button>
         </div>
@@ -27,11 +27,11 @@
         </div>
         <div class="aside-box3">
           <button class="aside-button_2">
-            <img src="../../public/icons/participants.svg" alt="" />
+            <img src="../assets/images/participants.svg" alt="" />
             <p>Таблица</p>
           </button>
           <button class="aside-button_2" style="padding-left: 15px">
-            <img src="../../public/icons/participants.svg" alt="" />
+            <img src="../assets/images/participants.svg" alt="" />
             <p>Календарь</p>
           </button>
         </div>
