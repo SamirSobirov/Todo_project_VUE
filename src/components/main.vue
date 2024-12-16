@@ -1,10 +1,16 @@
 <template>
-  <header :class="['main_header', { 'with-aside': isAsideVisible }]">
-    <nav class="nav">
-      <h1>Моя доска Todo</h1>
+  <header
+    :class="[
+      'main-header',
+      isAsideVisible ? 'main-header--with-aside' : 'main-header--without-aside',
+    ]"
+  >
+    <nav class="main-header__nav">
+      <h1 class="main-header__nav__title">Моя доска Todo</h1>
     </nav>
   </header>
 </template>
+
 
 <script lang="ts">
 import { defineComponent } from "vue";
