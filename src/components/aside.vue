@@ -28,11 +28,11 @@
         <div class="aside-box3">
           <button class="aside-button_2">
             <img :src="participantsIcon" alt="" />
-            <p>Таблица</p>
+            <p><i>Таблица</i></p>
           </button>
           <button class="aside-button_2" style="padding-left: 15px">
             <img :src="participantsIcon" alt="" />
-            <p>Календарь</p>
+            <p><i>Календарь</i></p>
           </button>
         </div>
       </div>

@@ -1,14 +1,7 @@
-//aside.vue
-.aside-block {
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    transition: transform 0.3s ease-in-out;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-    &.shifted {
-        transform: translateX(-250px);
-    }
-}
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Arial', sans-serif;
 
 .aside-block {
     width: 430px;
@@ -21,13 +14,13 @@
     left: 0;
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
+    font-family: $primary-font;
 
     &.hidden {
         transform: translateX(-100%);
     }
 
     .box {
-        // padding: 0 10px;
         align-items: center;
         justify-content: center;
 
@@ -42,6 +35,7 @@
             h3 {
                 font-size: 25px;
                 color: #9fadbc;
+                font-weight: 500;
 
                 p {
                     font-size: 14px;
@@ -81,6 +75,9 @@
         .aside-button_2 {
             @extend .aside-button-base;
             padding-right: 280px;
+            text-decoration-line: underline;
+
+            font-family: $secondary-font;
         }
 
         .aside-button-base {
@@ -92,11 +89,12 @@
             border: none;
             background-color: #161a1d;
             color: white;
+            font-family: $primary-font;
 
             p {
                 padding: 10px;
                 font-weight: 100;
-                font-size: 17px;
+                font-size: 16px;
             }
 
             img {
@@ -118,7 +116,8 @@
 
             p {
                 color: white;
-                font-size: 20px;
+                font-size: 18px;
+                font-weight: 500;
             }
         }
     }
@@ -135,11 +134,15 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: $secondary-font;
+    font-size: 16px;
+    font-weight: 500;
 
     &:hover {
         background-color: #0056b3;
     }
 }
+
 
 
 //header.vue
