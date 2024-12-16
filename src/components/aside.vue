@@ -41,7 +41,6 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import arrowLeftIcon from "../assets/images/arrow_left.svg";
