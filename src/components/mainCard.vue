@@ -9,7 +9,6 @@
       :class="{ 'board__column--drop-target': isDropTarget(index) }"
     >
       <h3 class="board__column__title">{{ column.title }}</h3>
-
       <div
         v-for="(task, taskIndex) in column.tasks"
         :key="taskIndex"
