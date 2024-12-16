@@ -1,26 +1,31 @@
 <template>
-  <main class="board" :class="{ 'with-aside': isAsideVisible }">
+  <main class="board" :class="{ 'board--with-aside': isAsideVisible }">
     <div
       class="board__column"
       v-for="(column, index) in columns"
       :key="index"
       @dragover.prevent="onDragOver"
       @drop="onDrop(index)"
-      :class="{ 'drop-target': isDropTarget(index) }"
+      :class="{ 'board__column--drop-target': isDropTarget(index) }"
     >
-      <h3 class="board__title">{{ column.title }}</h3>
+      <h3 class="board__column__title">{{ column.title }}</h3>
 
       <div
         v-for="(task, taskIndex) in column.tasks"
         :key="taskIndex"
-        class="board__card"
+        class="board__column__card"
         draggable="true"
         @dragstart="onDragStart(index, taskIndex)"
       >
         {{ task }}
       </div>
 
-      <div :class="['input-container', { active: column.isAddTaskBoxVisible }]">
+      <div
+        :class="[
+          'board__input-container',
+          { 'board__input-container--active': column.isAddTaskBoxVisible },
+        ]"
+      >
         <input
           type="text"
           :id="`input-field-${index}`"
@@ -34,15 +39,20 @@
         class="board__add-button"
         @click="toggleAddTaskBox(index)"
       >
-        <p class="board__add-icon">+</p>
-        <p class="board__add-text">Добавить задачу</p>
+        <p class="board__add-button__icon">+</p>
+        <p class="board__add-button__text">Добавить задачу</p>
       </button>
 
-      <div v-if="column.isAddTaskBoxVisible" class="add_task_box">
-        <button class="add_task" @click="addTask(index)">
+      <div v-if="column.isAddTaskBoxVisible" class="board__task-actions">
+        <button class="board__task-actions__add-task" @click="addTask(index)">
           Добавить задачу
         </button>
-        <button class="del_task" @click="toggleAddTaskBox(index)">X</button>
+        <button
+          class="board__task-actions__cancel-task"
+          @click="toggleAddTaskBox(index)"
+        >
+          X
+        </button>
       </div>
     </div>
   </main>
