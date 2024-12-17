@@ -11,7 +11,6 @@
   </header>
 </template>
 
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import { isAsideVisible } from "../main";
